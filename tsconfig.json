@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {
+      "@xls-components/*": [
+        "packages/*/src"
+      ]
+    },
+    "esModuleInterop": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    ".dumirc.ts",
+    "packages/**/*.{ts,tsx}"
+  ]
+}
