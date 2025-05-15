@@ -2,36 +2,31 @@
   "name": "xls-components",
   "private": true,
   "scripts": {
-    "start": "npm run dev",
-    "dev": "dumi dev",
     "build": "pnpm clean:dist && lerna run build",
+    "clean": "lerna clean --yes",
+    "clean:dist": "rimraf dist es lib",
+    "commit": "git add . && git cz",
+    "cs:add": "pnpm changeset add",
+    "cs:preEnter": "pnpm changeset pre enter beta",
+    "cs:preExit": "pnpm changeset pre exit",
+    "cs:publish": "pnpm changeset publish",
+    "cs:status": "pnpm changeset status",
+    "cs:version": "pnpm changeset version",
+    "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:preview": "dumi preview",
-    "prepare": "husky install && dumi setup",
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "commit": "git add . && git cz",
-    "clean": "lerna clean --yes",
-    "clean:dist": "lerna exec -- rm -rf dist es lib",
-    "lv": "lerna version",
     "lp": "lerna publish from-git",
-    "cs:add": "pnpm changeset add",
-    "cs:version": "pnpm changeset version",
-    "cs:publish": "pnpm changeset publish",
-    "cs:status": "pnpm changeset status",
-    "cs:preEnter": "pnpm changeset pre enter beta",
-    "cs:preExit": "pnpm changeset pre exit"
+    "lv": "lerna version",
+    "prepare": "husky install && dumi setup",
+    "start": "npm run dev"
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "lint-staged": {
     "*.{md,json}": [
@@ -49,6 +44,11 @@
       "eslint --fix",
       "prettier --parser=typescript --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.2",
@@ -70,6 +70,7 @@
     "prettier-plugin-packagejson": "^2.2.18",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "rimraf": "^6.0.1",
     "stylelint": "^14.9.1"
   },
   "volta": {

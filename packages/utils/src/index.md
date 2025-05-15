@@ -9,15 +9,15 @@ nav:
 :::code-group
 
 ```bash [npm]
-npm install @kc-utils
+npm install @xls-utils
 ```
 
 ```bash [yarn]
-yarn add @kc-utils
+yarn add @xls-utils
 ```
 
 ```bash [pnpm]
-pnpm add @kc-utils
+pnpm add @xls-utils
 ```
 
 :::
